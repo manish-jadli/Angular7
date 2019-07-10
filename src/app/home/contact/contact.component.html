@@ -1,0 +1,78 @@
+<section>
+  <div class="form-group">
+  <div class="alert alert-success strong-bold light-gray">Contact Us</div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">GIC Kotdwara Address Detail</div>
+    <div class="panel-body">
+      <ul class="list-unstyled">
+        <li><b>School Name:</b> <span>Government Inter College, Kotdwara</span></li>
+        <li><b>Email Id:</b> <span>gickotd12@gmail.com</span></li>
+        <li><b>Address:</b> <span>Near red light of kotdwara</span></li>
+        <li><b>Telephone No.</b> <span>01382 256788</span></li>
+        <li><b>Fax No.</b> <span>01382 256894</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!--contact form code-->
+<section>
+<div class="col-sm-6 col-sm-offset-3 clearfix form-group">
+  <div id="contactScreen" class="col-sm-12">
+    <div class="form-group clearfix"></div>
+    <form (ngSubmit)="contact()" [formGroup]="contactForm">
+      <div class="form-group" [ngClass]="{'has-error':(contactForm.controls.username.untouched || contactForm.controls.username.dirty) && !contactForm.controls.username.valid}">
+        <label for="username">Username:</label>
+          <div>
+            <input type="text" name="username" formControlName="username" class="form-control" placeholder="Enter Username" autofocus>
+            <span class="red" *ngIf="contactForm.controls.username.errors">Username is Required.</span>
+          </div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':(contactForm.controls.email.untouched || contactForm.controls.email.dirty) && !contactForm.controls.email.valid}">
+          <label for="email">Email:</label>
+            <div>
+              <input type="text" name="email" formControlName="email" class="form-control" placeholder="Enter Email" autofocus>
+              <span class="red" *ngIf="contactForm.controls.email.errors">Email is Required.</span>
+            </div>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error':(contactForm.controls.comment.untouched || contactForm.controls.comment.dirty) && !contactForm.controls.comment.valid}">
+            <label for="comment">Comment:</label>
+              <div>
+                <textarea cols="5" name="comment" formControlName="comment" class="form-control" rows="5" placeholder="Enter Message here..."></textarea>
+                <span class="red" *ngIf="contactForm.controls.comment.errors">Username is Required.</span>
+              </div>
+          </div>
+          <div class="form-group text-center  btn-toolbar clearfix">
+            <button class="btn btn-primary col-sm-5 col-xs-5" type="button" (click)="commentPost()"><i class="fa fa-check"></i> Submit</button>
+            <button class="btn btn-danger col-sm-5 col-xs-5" type="button"><i class="fa fa-refresh"></i> Reset</button>
+            <div class="form-group clearfix"></div>
+          </div>
+  </form>
+</div>
+</div>
+</section>
+<!--end-->
+<div class="clearfix"></div>
+<!--contact report code-->
+<div class="form-group clearfix">
+<div class="col-sm-6 col-sm-offset-3" id="fix-contact-message">
+  <div class=" clearfix form-group">
+    <div id="contactScreen" class="col-sm-12">
+      <div class="form-group clearfix"></div>
+      <div class="form-group"><span class="pull-left"><b>Username: </b>Manish Jadli</span><span class="pull-right"><i class="fa fa-plus pointer" (click)="voteup()"></i> {{value}} <i class="fa fa-minus pointer" (click)="votedown()"></i></span><span class="clearfix"></span></div>
+      <div class="form-group"><b>Email: </b>manish120mani@gmail.com</div>
+      <div class="form-group"><b>Comment: </b>Good for viewing the school full information with detail. I am very happy to see this school details.</div>
+  </div>
+  </div>  
+</div>
+</div>
+<!--end-->
+
+<!--google map-->
+<section>
+  <div class="form-group clearfix">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.2259963069923!2d78.51625281491638!3d29.74217193974373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39097c871a6a350f%3A0xdd3faeab0d35e8bf!2sGIC+KOTDWAR!5e0!3m2!1sen!2sin!4v1546183318208" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+</section>
+<!--end-->

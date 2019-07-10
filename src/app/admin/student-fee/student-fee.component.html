@@ -1,0 +1,147 @@
+
+<div class="form-group">
+  <form class="form-horizontal" [formGroup]="studentFeesForm" (ngSubmit)="onSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Payment Fees</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('student_id').touched || studentFeesForm.get('student_id').dirty) && !studentFeesForm.get('student_id').valid}">
+          <label for="fullName" class="col-sm-2 control-label">Student Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="student_id" placeholder="Enter Student Id" class="form-control" id="student_id" required>
+            <span class="red" *ngIf="studentFeesForm.get('student_id').errors">Student Id is Required</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Full Name:</label>
+            <div class="col-sm-3 form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('first_name').touched || studentFeesForm.get('first_name').dirty) && !studentFeesForm.get('first_name').valid}">
+              <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter First Name" formControlName="first_name" required>
+              <span class="red" *ngIf="studentFeesForm.get('first_name').errors">First Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-2 form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('middle_name').touched || studentFeesForm.get('middle_name').dirty) && !studentFeesForm.get('middle_name').valid}">
+              <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Middle Name" formControlName="middle_name" required>
+              <span class="red" *ngIf="studentFeesForm.get('middle_name').errors">Middle Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-3 clearfix" [ngClass]="{'has-error':(studentFeesForm.get('last_name').touched || studentFeesForm.get('last_name').dirty) && !studentFeesForm.get('last_name').valid}">
+              <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="last_name" required>
+              <span class="red" *ngIf="studentFeesForm.get('last_name').errors">Last Name is Required</span>
+
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('gender').touched || studentFeesForm.get('gender').dirty) && !studentFeesForm.get('gender').valid}">
+            <label for="proficiency" class="control-label col-sm-2">Gender:</label>
+            <div class="col-sm-8">
+              <label class="radio-inline">
+                <input type="radio" value="Male" name="gender" formControlName="gender" required>Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="Female" name="gender" formControlName="gender" required>Female
+              </label>
+              <span class="clearfix"></span>
+              <span class="red" *ngIf="studentFeesForm.get('gender').errors">Gender is Required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('class').touched || studentFeesForm.get('class').dirty) && !studentFeesForm.get('class').valid}">
+          <label for="class" class="col-sm-2 control-label">Class:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="class" placeholder="Enter Class" class="form-control" id="class" required>
+            <span class="red" *ngIf="studentFeesForm.get('class').errors">Class is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('subject').touched || studentFeesForm.get('subject').dirty) && !studentFeesForm.get('subject').valid}">
+          <label for="subject" class="col-sm-2 control-label">Subject:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="subject" placeholder="Enter Subject" class="form-control" id="subject" required>
+            <span class="red" *ngIf="studentFeesForm.get('subject').errors">Subject is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('payment_mode').touched || studentFeesForm.get('payment_mode').dirty) && !studentFeesForm.get('payment_mode').valid}">
+          <label for="payment_mode" class="col-sm-2 control-label">Payment Mode:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="payment_mode" placeholder="Enter Mother Name" class="form-control" id="payment_mode" required>
+            <span class="red" *ngIf="studentFeesForm.get('payment_mode').errors">Payment Mode is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('fees').touched || studentFeesForm.get('fees').dirty) && !studentFeesForm.get('fees').valid}">
+          <label for="fees" class="col-sm-2 control-label">Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="fees" placeholder="Enter Fees Amount" class="form-control" id="fees" required>
+            <span class="red" *ngIf="studentFeesForm.get('fees').errors">Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('tution_fee').touched || studentFeesForm.get('tution_fee').dirty) && !studentFeesForm.get('tution_fee').valid}">
+          <label for="tution_fee" class="col-sm-2 control-label">Tution Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="tution_fee" placeholder="Enter Tution Fees" class="form-control" id="tution_fee" required>
+            <span class="red" *ngIf="studentFeesForm.get('tution_fee').errors">Tution Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('library_fee').touched || studentFeesForm.get('library_fee').dirty) && !studentFeesForm.get('library_fee').valid}">
+          <label for="library_fee" class="col-sm-2 control-label">Library Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="library_fee" placeholder="Enter Library Fees" class="form-control" id="library_fee" required>
+            <span class="red" *ngIf="studentFeesForm.get('library_fee').errors">Library Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('game_fee').touched || studentFeesForm.get('game_fee').dirty) && !studentFeesForm.get('game_fee').valid}">
+          <label for="game_fee" class="col-sm-2 control-label">Games Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="game_fee" placeholder="Enter Games Fees" class="form-control" id="game_fee" required>
+            <span class="red" *ngIf="studentFeesForm.get('game_fee').errors">Games Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('paneltie_fees').touched || studentFeesForm.get('paneltie_fees').dirty) && !studentFeesForm.get('paneltie_fees').valid}">
+          <label for="paneltie_fees" class="col-sm-2 control-label">Panelty Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="paneltie_fees" placeholder="Enter Panelty Fees" class="form-control" id="paneltie_fees" required>
+            <span class="red" *ngIf="studentFeesForm.get('paneltie_fees').errors">Panelty Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('other_fee').touched || studentFeesForm.get('other_fee').dirty) && !studentFeesForm.get('other_fee').valid}">
+          <label for="other_fee" class="col-sm-2 control-label">Other Fees:</label>
+          <div class="col-sm-8">
+            <input type="number" [value]="0.00" formControlName="other_fee" placeholder="Enter Other Fees" class="form-control" id="other_fee" required>
+            <span class="red" *ngIf="studentFeesForm.get('other_fee').errors">Other Fees is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentFeesForm.get('IsActive').touched || studentFeesForm.get('IsActive').dirty) && !studentFeesForm.get('IsActive').valid}">
+          <label for="email" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="studentFeesForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+        <button type="submit" (click)="postStudentFee()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+        <!-- <button type="button" (click)="onLoadFeesDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+        <button type="button" (click)="updateStudentFee()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+        <!-- <button type="button" (click)="saveStudent()"  class="btn btn-md btn-info">Save Student</button> -->
+        <button type="button" (click)="viewStudentFee()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View Student</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <br/><br/>

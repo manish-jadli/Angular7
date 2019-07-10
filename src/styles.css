@@ -1,0 +1,342 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import '~ngx-bootstrap/datepicker/bs-datepicker.css';
+@import '~toastr/build/toastr.min.css';
+
+html,body{
+
+  background: #2e2e2e;
+  -webkit-transition:0.5s;
+  -moz-transition:0.5s;
+  -o-transition:0.5s;
+  transition:0.5s;
+  color:#fff;
+}
+.panel-body{
+  color:#505050;
+}
+
+.yellow{
+    background: #fbdd00;
+}
+
+.light-gray{
+  background: #f0f0f0;
+  color:#505050;
+}
+
+.black{
+  background: #2e2e2e;
+}
+
+.flex{
+  display: flex !important;
+}
+
+ul#social-icon{
+  display: flex;
+  margin-bottom: 0px;
+  line-height: 30px;
+}
+
+ul#social-icon li{
+  margin:3px;
+}
+
+ul#social-icon li i.fa:hover{
+  color:#f59000;
+  font-weight: 800;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+footer{
+  background: #2e2e2e;
+  color:#fff;
+  padding: 40px;
+  border-top:3px solid #333;
+}
+footer .container ul li a{
+  color:#fff!important;
+  -webkit-transition: 0.35s;
+  -moz-transition: 0.35s;
+  -o-transition: 0.35s;
+  transition: 0.35s;
+}
+footer .container ul li a:hover{
+  color:#faa524 !important;
+}
+.navbar {
+  border-radius: 0px !important;
+  border:0px !important;
+  box-shadow: 0px 0px 1px #ffff;
+}
+
+.red{
+    color:#a94442;
+}
+
+.btn-primary, .panel-primary>.panel-heading{
+  background:#19b0e6 !important;
+  border-color:#19b0e6 !important;
+}
+.panel-primary{
+  border-color:#19b0e6 !important;
+}
+
+.btn-danger{
+  background: #e40000 !important;
+}
+
+.btn-warning{
+  background: #f57c21 !important;
+}
+
+table tr th{
+    background: #ddd;
+    padding: 5px;
+  }
+  table tr td{
+    padding:5px;
+  }
+  .pointer{
+    cursor: pointer;
+  }
+  .text-white{
+    color:#fff !important;
+  }
+  .m-b-0{
+    margin-bottom:0px;
+  }
+
+  #canvas{
+    height: 400px !important;
+    background: white;
+    padding: 20px;
+    border: 1px solid #337ab7;
+  }
+
+  .required::after {
+    content: " *";
+    color: red;
+}
+#box{
+  background:rgba(255,78,200,0.7);
+  min-height:400px;
+  border:1px solid #337ab7;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#box:hover{
+  background:#337ab7;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  color:#fff;
+  cursor: pointer;
+}
+#box h2{
+  justify-content: center;
+  text-align:center;
+  align-content: center;
+  position: absolute;
+  font-size: 10em;
+  font-weight: 800;
+  color:#ddd;
+  z-index: 0;
+  top: 9rem;
+  opacity: 0.7;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#box:hover h2{
+  top:3rem;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#box h3{
+  z-index: 1;
+  top: 18rem;
+  position: absolute;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  color:#fff;
+  font-weight: 800;
+}
+#box:hover h3{
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+  .form-control.ng-invalid {
+    border-left:5px solid red;
+}
+.form-control.ng-invalid ~ label.checkbox-inline::after {
+  content: " *";
+  color: red;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+  color: #fff !important;
+}
+
+.t-0{
+  top:0px;
+}
+.panel-body img{margin:0 auto;}
+#h-card .col-sm-4 > .panel-body{
+  background:#2e2e2e !important;
+  color:#fff;
+  -webkit-transition:0.5s;
+  -moz-transition:0.5s;
+  -o-transition:0.5s;
+  transition:0.5s;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  box-shadow:0px 0px 3px #fff;
+}
+#h-card .col-sm-4 > .panel-body:hover{
+  background:#f59000 !important;
+  -webkit-transition:0.5s;
+  -moz-transition:0.5s;
+  -o-transition:0.5s;
+  transition:0.5s;
+}
+
+.w-106{
+  width: 106px;
+}
+
+.mh-371{
+  min-height: 371px;
+}
+.strong-bold{
+  font-weight: 800;
+}
+.plr-0{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.panel-body{
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.fix-scroll{
+  min-height: 100px;
+  max-height:400px;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+.t-5{
+  top:5px;
+  position: relative;
+}
+
+.sticky-search{
+  position: sticky;
+  top: -15px;
+  padding-top: 15px;
+  z-index:10;
+  background:#fff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.success{
+  background:green !important;
+}
+.danger{
+  background:red !important;
+}
+a:hover,a:active{
+  text-decoration: none !important;
+}
+#result div a ul li:hover{
+  background:#ddd;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+::selection{
+  background: #f59000;
+}
+
+#contactScreen{
+  -moz-box-shadow: 0px 0px 5px #505050;
+  -webkit-box-shadow: 0px 0px 5px #505050;
+  box-shadow: 0px 0px 5px #505050;
+  background: #f8f8f8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.primary{
+  background:#19b0e6 !important;
+  color:#fff;
+  font-weight: 800;
+}
+
+.navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-brand {
+  color: #fff !important;
+}
+
+.d-yellow{
+  background: #2e2e2e !important;
+}
+#fix-contact-message{
+  min-height: 0px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.bor-15{
+border:15px solid #505050;
+}
+.b-a-1{
+  -webkit-box-shadow: 0px 0px 2px #333;
+  -moz-box-shadow: 0px 0px 2px #333;
+  box-shadow: 0px 0px 2px #333;
+  padding: 15px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+ul#languageChange li:first-child{
+  margin:0px 0px 0px;
+}
+ul#languageChange li{
+  margin:0px 10px 0px;
+}
+
+.active-lang{
+  color:#f59000;
+}

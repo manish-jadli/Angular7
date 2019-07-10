@@ -1,0 +1,50 @@
+<div class="form-group col-sm-8 col-sm-offset-2 clearfix">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="col-sm-4">
+        <div>
+          <span *ngIf="studentListDetail?.gender==='Male'">
+            <img [src]="user" [alt]="user" [title]="user" class="img-responsive">
+          </span>
+          <span *ngIf="studentListDetail?.gender==='Female'">
+            <img [src]="girl" [alt]="girl" [title]="girl" class="img-responsive">
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="panel panel-primary m-b-0">
+          <div class="panel-heading">{{studentListDetail?.student_id}}</div>
+          <div class="panel-body">
+            <div>
+              <div class="row">
+                <div class="col-sm-5"><b>Full Name:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.first_name}} {{studentListDetail?.last_name}}</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5"><b>Class Id:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.class_id}}</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5"><b>Gender:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.gender}}</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5"><b>Date From:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.date_from | date }}</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5"><b>Date To:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.date_to | date }}</div>
+              </div>
+        
+              <div class="row">
+                <div class="col-sm-5"><b>Is Active:</b></div>
+                <div class="col-sm-7">{{studentListDetail?.IsActive}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

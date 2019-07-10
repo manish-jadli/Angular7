@@ -1,0 +1,41 @@
+
+<div class="form-group col-sm-8 col-sm-offset-2 clearfix">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="col-sm-4">
+            <div>
+              <div class="form-group">
+                <span>
+                  <img [src]="user" [alt]="user" class="img-responsive">
+                </span>
+                <span *ngIf="studentAddress?.gender==='Female'">
+                  <img [src]="girl" [alt]="girl" class="img-responsive">
+                </span>
+              </div>
+              </div>
+    </div>
+  <div class="col-sm-8">
+    <div class="panel panel-primary m-b-0">
+      <div class="panel-heading">{{studentAddress?.student_id}}</div>
+      <div class="panel-body">
+            <div>
+              <div class="row">
+                  <div class="col-sm-5 col-xs-6 form-group"><b>Address ID:</b></div>
+                  <div class="col-sm-7 col-xs-6 form-group">{{studentAddress?.address_id}}</div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-5 col-xs-6 form-group"><b>Date From:</b></div>
+                  <div class="col-sm-7 col-xs-6 form-group">{{studentAddress?.date_from}}</div>
+                </div>
+              <div class="row">
+                  <div class="col-sm-5 col-xs-6 form-group"><b>Address Detail:</b></div>
+                  <div class="col-sm-7 col-xs-6 form-group">{{studentAddress?.address_details}}</div>
+                </div>
+            </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+    </div>
+  

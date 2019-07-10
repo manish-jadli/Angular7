@@ -1,0 +1,33 @@
+
+<section id="result">
+  <!--result data code-->
+  <div class="form-group">
+    <div class="alert alert-success strong-bold light-gray">Results</div>
+    <div class="panel panel-primary" *ngFor="let result of resultDataAll; let i=index">
+      <div class="panel-heading" (click)="results()"><span class="glyphicon pointer" [ngClass]="{'glyphicon-minus':resultCheck, 'glyphicon-plus':!resultCheck}"></span> {{result.class}} {{result.active}}<span class="badge pull-right">{{result.id}}</span></div>
+      <div class="panel-body fix-scroll" *ngIf="resultCheck">
+        <!--search data code-->
+        <div class="row clearfix sticky-search">
+          <label for="search" class="col-sm-1 col-xs-12 t-5 form-group">Search:</label>
+          <div class="form-group col-sm-4">
+            <input type="text" class="form-control"  [(ngModel)]="listFilter" placeholder="Enter Search by name" autofocus>
+          </div>
+          <div class="form-group col-sm-2 col-xs-12">
+          <button type="button" class="btn btn-primary col-xs-12">Search</button>
+          </div>
+        </div>
+        <!--end-->
+        <!--result data code-->
+        <div>
+          <a class="pointer list-group col-sm-4 m-b-0" *ngFor="let item of result.resultData | result:listFilter;let i =index">
+            <ul class="list-unstyled list-group-heading">
+              <li class="list-group-item">{{item.username}} <span class="badge pull-right" [ngClass]="{'success':item.result==='Passed','danger':item.result==='Failed'}">{{item.result}}</span></li>
+            </ul>
+          </a>
+       </div>
+       <!--end-->
+      </div>
+    </div>
+  </div>
+  <!--end-->
+</section>

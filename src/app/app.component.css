@@ -1,0 +1,6 @@
+.navbar-dark .navbar-nav .nav-link, ul li a{
+    color:gray;
+}
+ul#MW-100 li{
+    min-width: 100%;
+}

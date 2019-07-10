@@ -1,0 +1,30 @@
+
+
+<div class="row">
+  <div class="form-group col-sm-3" *ngFor="let item of subject">
+   <div class="panel panel-primary">
+     <div class="panel-heading clearfix">
+        <div>{{item.subject_id}}</div>
+     </div>
+     <div class="panel-body">
+       <div class="form-group" id="book-detail" [title]="item.subject_name">
+       <h2>{{item.subject_name}}</h2>
+       </div>
+          <div>
+            <div class="clearfix">
+              <button type="button" class="btn btn-md btn-info col-sm-5 pull-left" [routerLink]="['/admin/student-redirect', item.subject_id]">View</button> &nbsp; 
+              <button type="button" class="btn btn-md btn-danger col-sm-6 pull-right" (click)="delete(item.subject_id)">Delete</button>
+          </div>
+          <div *ngIf="!subject">
+            <div class="text-center">Data will be processing. Please wait...</div>
+          </div>
+          <div *ngIf="subject && subject.length==0">
+              <div class="text-center">No record found.</div>
+            </div>
+          </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+    

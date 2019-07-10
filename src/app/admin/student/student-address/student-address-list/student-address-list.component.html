@@ -1,0 +1,86 @@
+
+
+<section>
+    <div class="row">
+      <div class="clearfix col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Total Student ID: <span class="badge badge-success">{{studentAddress.length}}</span></div>
+        </div>
+      </div>
+      <div class="form-group row">
+          <div class="col-sm-6">
+        <div class="col-sm-7">
+          <input type="text" [(ngModel)]="listFilter" placeholder="Filter by Student ID" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-warning">Filter by Student ID</button>
+      </div>
+      <div class="col-sm-6">
+          <div class="form-group col-sm-12">
+            <div class="pull-right">
+              <div class="btn-toolbar">
+              <button type="button" class="btn btn-danger" (click)="gridClick()">Grid</button>
+              <button type="button" class="btn btn-primary" (click)="viewClick()">View</button>
+              </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let item of studentAddress">
+      <div class="form-group col-sm-4" *ngIf="grid">
+        <div class="panel panel-primary">
+          <div class="panel-heading clearfix">
+            <div>{{item.student_id}}</div>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <span>
+                <img [src]="user" [alt]="user" class="img-responsive">
+              </span>
+              <span *ngIf="item.gender==='Female'">
+                <img [src]="girl" [alt]="girl" class="img-responsive">
+              </span>
+            </div>
+            <div class="form-group">
+              <h4>{{item.address_id}}</h4>
+              <p>{{item.address_details}}</p>
+            </div>
+            <div>
+              <div class="clearfix">
+                <button type="button" class="btn btn-md btn-info col-sm-5 pull-left" (click)="onClick(item.student_id)">View</button> &nbsp;
+                <button type="button" class="btn btn-md btn-danger col-sm-6 pull-right" (click)="deleteStudentAddress(item.student_id)">Delete</button>
+              </div>
+              <div *ngIf="!studentAddress">
+                <div class="text-center">Data will be processing. Please wait...</div>
+              </div>
+              <div *ngIf="studentAddress && studentAddress.length==0">
+                <div class="text-center">No record found.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!grid" class="col-sm-12">
+          <div class="panel">
+              <div class="panel-heading light-gray clearfix">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <span>
+                      <img [src]="user" [alt]="user" [title]="user" class="img-responsive img-circle w-106">
+                    </span>
+                  </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="form-group">
+                      <h3>{{item.student_id}} <span class="pull-right glyphicon glyphicon-check text-danger"></span><span class="clearfix"></span></h3>
+                      <p>{{item.address_id}}</p>
+                      <p>{{item.address_details}}</p>
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </section>

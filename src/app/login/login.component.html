@@ -1,0 +1,49 @@
+ <div class="row">
+   <div class="col-sm-6 col-sm-offset-3">
+     <div class="panel panel-primary">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+        <form (ngSubmit)="onLogin()" [formGroup]="loginForm">
+        <div class="clearfix">
+
+          <div class="form-group"  [ngClass]="{'has-error':(loginForm.controls.username.untouched || loginForm.controls.username.dirty) && !loginForm.controls.username.valid}">
+              <label for="username" name="username" class="control-label">Username:</label>
+              <div>
+                <input type="text" placeholder="Enter Username" formControlName="username" name="username" id="username" class="form-control" autofocus>
+                <div>
+                  <span class="red" *ngIf="loginForm.controls.username.errors">Username is Required.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error':(loginForm.controls.password.touched || loginForm.controls.password.dirty) && !loginForm.controls.password.valid}">
+                <label for="password" name="password" class="control-label">Password:</label>
+                <div>
+                  <input type="password" placeholder="Enter Password" formControlName="password" name="password" id="password" class="form-control" autofocus>
+                  <div>
+                    <span class="red" *ngIf="loginForm.controls.password.errors">Password is Required</span>
+                  </div>
+                </div>
+              </div>
+          <div class="clearfix"></div>
+          <div class="form-group">
+          <div class="checkbox-inline">
+            <label><input type="checkbox" name="IsActive" class="t-0" formControlName="IsActive"> IsActive</label>
+          </div>
+          </div>
+                  <div class="clearfix">
+                      <div class="form-group pull-left btn-toolbar text-center">
+                        <button class="btn btn-success" type="submit" (click)="confirmSubmit()"><i class="fa fa-check"></i> Submit</button>
+                        <button class="btn btn-danger" type="reset"><i class="fa fa-refresh"></i> Reset</button>
+                      </div>
+                      <div class="pull-right">
+                        <button type="button" class="btn btn-link" (click)="forgetPassword()"><i class="fa fa-help"></i> Forget Password</button>
+                      </div>
+                      </div>
+        </div>
+      </form>
+      </div>
+     </div>
+   </div>
+ </div>
+<br/><br/>

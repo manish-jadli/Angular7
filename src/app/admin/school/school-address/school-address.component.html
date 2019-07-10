@@ -1,0 +1,67 @@
+
+
+
+
+
+<div class="form-group">
+  <form class="form-horizontal" [formGroup]="schoolAddressForm" (ngSubmit)="onSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">School Address Detail</h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolAddressForm.get('address_id').touched || schoolAddressForm.get('address_id').dirty) && !schoolAddressForm.get('address_id').valid}">
+          <label for="address_id" class="col-sm-2 control-label">Address Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="address_id" placeholder="Enter Address Id" class="form-control" id="address_id" required>
+            <span class="red" *ngIf="schoolAddressForm.get('address_id').errors">Address Id is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolAddressForm.get('school_name').touched || schoolAddressForm.get('school_name').dirty) && !schoolAddressForm.get('school_name').valid}">
+          <label for="school_name" class="col-sm-2 control-label">School Name:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="school_name" placeholder="Enter School Name" class="form-control" id="school_name" required>
+            <span class="red" *ngIf="schoolAddressForm.get('school_name').errors">School Name is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolAddressForm.get('img').touched || schoolAddressForm.get('img').dirty) && !schoolAddressForm.get('img').valid}">
+          <label for="img" class="col-sm-2 control-label">School Image:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="img" placeholder="Enter School Image Path" class="form-control" id="img" required>
+            <span class="red" *ngIf="schoolAddressForm.get('img').errors">School Image is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolAddressForm.get('address_detail').touched || schoolAddressForm.get('address_detail').dirty) && !schoolAddressForm.get('address_detail').valid}">
+          <label for="address_detail" class="col-sm-2 control-label">Address Details:</label>
+          <div class="col-sm-8">
+            <textarea cols="5" rows="5" type="text" formControlName="address_detail" placeholder="Enter Address Details" class="form-control" id="address_detail" required></textarea>
+            <span class="red" *ngIf="schoolAddressForm.get('address_detail').errors">Address Details is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolAddressForm.get('IsActive').touched || schoolAddressForm.get('IsActive').dirty) && !schoolAddressForm.get('IsActive').valid}">
+          <label for="IsActive" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="schoolAddressForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+        <button (click)="postSchoolAddress()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+        <!-- <button type="button" type="submit" (click)="onLoadSchoolAddressDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+        <button type="button" (click)="updateSchoolAddress()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+        <!-- <button type="button" (click)="saveSchool()"  class="btn btn-md btn-info">Save School</button> -->
+        <button type="button" (click)="viewSchoolAddress()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View School</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <br/><br/>  

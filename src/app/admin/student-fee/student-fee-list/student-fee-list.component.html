@@ -1,0 +1,87 @@
+
+
+<section>
+  <div class="row">
+    <div class="clearfix col-sm-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Total Student Fee: <span class="badge badge-success">{{studentFeeList.length}}</span></div>
+      </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+      <div class="col-sm-7">
+        <input type="text" [(ngModel)]="listFilter" placeholder="Filter by Student ID" class="form-control" />
+      </div>
+      <button type="button" class="btn btn-warning">Filter by Student ID</button>
+    </div>
+      <div class="col-sm-6">
+          <div class="form-group col-sm-12">
+            <div class="pull-right">
+              <div class="btn-toolbar">
+              <button type="button" class="btn btn-danger" (click)="gridClick()">Grid</button>
+              <button type="button" class="btn btn-primary" (click)="viewClick()">View</button>
+              </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of studentFeeList | sflist:listFilter">
+    <div *ngIf="grid" class="form-group col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          {{item.student_id}}
+        </div>
+        <div class="panel-body">
+          <div class="clearfix">
+              <div class="form-group clearfix">
+                  <span>
+                    <img [src]="user" [alt]="user" [title]="user" class="img-responsive">
+                  </span>
+                  <span *ngIf="item.gender==='Female'">
+                    <img [src]="girl" [alt]="girl" [title]="girl" class="img-responsive">
+                  </span>
+                </div>
+            <div class="form-group">
+              <h4>{{item.first_name}} {{item.middle_name}} {{item.last_name}}</h4>
+              <p><span *ngIf="item.fees">{{item.fees | currency:'USD':true}}</span><span *ngIf="!item.fees">{{0.00 | currency:'USD':true}}</span></p>
+              <h4><span [ngClass]="{'alert-success':item.fees, 'alert-danger':!item.fees}"><span *ngIf="item.fees">Verified Fee Payment.</span><span *ngIf="!item.fees">Not Verified Fee Payment.</span></span></h4>
+            </div>
+            <div class="clearfix">
+              <button type="button" class="btn btn-md btn-info col-sm-5 pull-left" (click)="onClick(item.student_id)">View</button> &nbsp;
+              <button type="button" class="btn btn-md btn-danger col-sm-6 pull-right" (click)="deleteStudentFeeList(item.student_id)">Delete</button>
+            </div>
+          </div>
+          <div *ngIf="!studentFeeList">
+            <div class="text-center">Data will be processing. Please wait...</div>
+          </div>
+          <div *ngIf="studentFeeList && studentFeeList.length==0">
+            <div class="text-center">No record found.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!grid" class="col-sm-12">
+        <div class="panel">
+            <div class="panel-heading light-gray clearfix" [ngClass]="{'alert-danger':!item.fees}">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <span>
+                    <img [src]="user" [alt]="user" [title]="user" class="img-responsive img-circle w-106">
+                  </span>
+                </div>
+                </div>
+                <div class="col-sm-9">
+                  <div class="form-group">
+                    <h3>{{item.student_id}} <span class="pull-right glyphicon glyphicon-check text-danger"></span><span class="clearfix"></span></h3>
+                    <p>{{item.first_name}} {{item.middle_name}} {{item.last_name}}</p>
+                    <p>{{item.fees | currency:'USD':true}}</p>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>

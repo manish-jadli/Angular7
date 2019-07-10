@@ -1,0 +1,80 @@
+
+<br/><br/>
+ <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="panel panel-primary">
+       <div class="panel-heading">Signup</div>
+       <div class="panel-body">
+         <form (ngSubmit)="onSignup()" [formGroup]="signupForm">
+         <div class="clearfix">
+
+            <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.login_id.touched || signupForm.controls.login_id.dirty) && !signupForm.controls.login_id.valid}">
+                <label for="login_id"  name="login_id" class="control-label">Login Id:</label>
+                <div>
+                  <input type="text" placeholder="Enter Login Id" formControlName="login_id" name="login_id" class="form-control" autofocus>
+                  <div><span class="red" *ngIf="signupForm.controls.login_id.errors">Login Id is Required.</span></div>
+                 </div>
+              </div>
+
+              <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.role.touched || signupForm.controls.role.dirty) && !signupForm.controls.role.valid}">
+                  <label for="role"  name="role" class="control-label">Role:</label>
+                  <div>
+                    <select formControlName="role" name="role" class="form-control">
+                      <option [value]="role.role" *ngFor="let role of roles">{{role.role}}</option>
+                      </select>
+                    <div><span class="red" *ngIf="signupForm.controls.role.errors">Role is Required.</span></div>
+                   </div>
+                </div>
+ 
+           <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.username.touched || signupForm.controls.username.dirty) && !signupForm.controls.username.valid}">
+               <label for="username"  name="username" class="control-label">Username:</label>
+               <div>
+                 <input type="text" placeholder="Enter Username" formControlName="username" name="username" class="form-control" autofocus>
+                 <div><span class="red" *ngIf="signupForm.controls.username.errors">Username is Required.</span></div>
+                </div>
+             </div>
+             
+             <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.email.touched || signupForm.controls.email.dirty) && !signupForm.controls.email.valid}">
+                <label for="email"  name="email" class="control-label">Email:</label>
+                <div>
+                  <input type="email" placeholder="Enter Email Id" formControlName="email" name="email" class="form-control" autofocus>
+                  <div><span class="red" *ngIf="signupForm.controls.email.errors">Email is Required.</span></div>
+                 </div>
+              </div>
+ 
+                   <div formControlGroup="checkPassword" [ngClass]="{'has-error':(signupForm.controls.confirm_password.touched) && (signupForm.controls.confirm_password.invalid) && !(signupForm.controls.confirm_password.errors?.required)}">
+                   <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.password.touched) && (signupForm.controls.password.invalid)}">
+                       <label for="password"  name="password" class="control-label">Password:</label>
+                       <div>
+                         <input type="password" placeholder="Enter Password" formControlName="password" name="password" class="form-control"  autofocus>
+                         <div><span class="red" *ngIf="signupForm.controls.password.touched  && signupForm.controls.password.errors?.required">Password is Required.</span></div>
+                       </div>
+                     </div>
+ 
+                     <div class="form-group"  [ngClass]="{'has-error':(signupForm.controls.confirm_password.touched) && (signupForm.controls.confirm_password.invalid)}">
+                         <label for="confirm_password"  name="confirm_password" class="control-label">Confirm Password:</label>
+                         <div>
+                           <input type="password" appCofirmPassword="password" placeholder="Enter Confirm Password" formControlName="confirm_password" name="confirm_password" class="form-control" autofocus>
+                           <div><span class="red" *ngIf="signupForm.controls.confirm_password.errors?.required">Confirm Password is Required.</span></div>
+                           <div><span class="red" *ngIf="signupForm.controls.confirm_password.errors?.notEqual && !signupForm.controls.confirm_password.errors?.required">Password & Confirm Password does not match.</span></div>
+                         </div>
+                       </div>
+                       <div class="form-group">
+                        <div class="checkbox-inline">
+                          <label><input type="checkbox" name="IsActive" class="t-0" formControlName="IsActive"> IsActive</label>
+                        </div>
+                        </div>
+                      </div>
+ 
+                       <div class="form-group btn-toolbar text-center">
+                         <button class="btn btn-success" type="button" (click)="postSignup()"><i class="fa fa-check"></i> Submit</button>
+                         <!-- <button class="btn btn-success" (click)="onLoadDataClick()">Load Data</button> -->
+                         <button class="btn btn-danger" type="reset"><i class="fa fa-refresh"></i> Reset</button>
+                       </div>
+         </div>
+       </form>
+       </div>
+      </div>
+    </div>
+  </div>
+ <br/><br/>

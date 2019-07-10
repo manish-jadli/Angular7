@@ -1,0 +1,137 @@
+
+<section>
+<div class="alert primary">
+Total Student: {{studentData.length}}
+</div>
+<div class="form-group">
+<form class="form-horizontal"  [formGroup]="studentForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Student</h3>
+    </div>
+    <div class="panel-body clearfix">
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('student_id').touched || studentForm.get('student_id').dirty) && !studentForm.get('student_id').valid}">
+          <label for="student_id" class="col-sm-2 control-label">Student Id:</label>
+          <div class="col-sm-8">
+            <input type="text" name="student_id" formControlName="student_id" placeholder="Enter Student Id" class="form-control" required>
+              <span class="red" *ngIf="studentForm.get('student_id').errors">Student Id is Required</span>
+          </div>
+        </div>
+        <div>
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('first_name').touched || studentForm.get('first_name').dirty) && !studentForm.get('first_name').valid}">
+            <label for="first_name" class="col-sm-2 control-label">Full Name:</label>
+            <div class="col-sm-3 form-group">
+              <div>
+                <div class="col-sm-12">
+              <input type="text" class="form-control" name="first_name" placeholder="Enter First Name" formControlName="first_name" required>
+              <span class="red" *ngIf="studentForm.get('first_name').errors">First Name is Required</span>
+            </div>
+              </div>
+            </div>
+            <div class="col-sm-2 form-group">
+                <div>
+                    <div class="col-sm-12">
+              <input type="text" class="form-control" name="middle_name" placeholder="Enter Middle Name" formControlName="middle_name">
+              </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" formControlName="last_name" required>
+              <span class="red" *ngIf="studentForm.get('last_name').errors">Last Name is Required</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('gender').touched || studentForm.get('gender').dirty) && !studentForm.get('gender').valid}">
+            <label for="proficiency" class="control-label col-sm-2">Gender:</label>
+            <div class="col-sm-8">
+              <label class="radio-inline">
+                <input type="radio" value="Male" name="gender" formControlName="gender" required>Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="Female" name="gender" formControlName="gender" required>Female
+              </label>
+              <span class="clearfix"></span>
+              <span class="red" *ngIf="studentForm.get('gender').errors">Gender is Required</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('date_of_birth').touched || studentForm.get('date_of_birth').dirty) && !studentForm.get('date_of_birth').valid}">
+          <label for="email" class="col-sm-2 control-label">Date of Birth:</label>
+          <div class="col-sm-8">
+            <input type="date" formControlName="date_of_birth" placeholder="Enter Date of Birth" class="form-control" id="date_of_birth" required>
+            <span class="red" *ngIf="studentForm.get('date_of_birth').errors">Date of Birth is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('father_name').touched || studentForm.get('father_name').dirty) && !studentForm.get('father_name').valid}">
+          <label for="father_name" class="col-sm-2 control-label">Father Name:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="father_name" placeholder="Enter Father Name" class="form-control" id="father_name" required>
+            <span class="red" *ngIf="studentForm.get('father_name').errors">Father Name is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('mother_name').touched || studentForm.get('mother_name').dirty) && !studentForm.get('mother_name').valid}">
+          <label for="mother_name" class="col-sm-2 control-label">Mother Name:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="mother_name" placeholder="Enter Mother Name" class="form-control" id="mother_name" required>
+            <span class="red" *ngIf="studentForm.get('mother_name').errors">Mother Name is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('mobile_no').touched || studentForm.get('mobile_no').dirty) && !studentForm.get('mobile_no').valid}">
+          <label for="mobile_no" class="col-sm-2 control-label">Mobile No.:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="mobile_no" placeholder="Enter Mobile No." class="form-control" id="mobile_no" required>
+            <span class="red" *ngIf="studentForm.get('mobile_no').errors">Mobile No. is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('school_name').touched || studentForm.get('school_name').dirty) && !studentForm.get('school_name').valid}">
+          <label for="school_name" class="col-sm-2 control-label">School Name:</label>
+          <div class="col-sm-8">
+            <select formControlName="school_name" class="form-control" id="school_name">
+              <option [value]="" selected>Select</option>
+              <option [value]="schoolList.name" *ngFor="let schoolList of schoolLists">{{schoolList.name}}</option>
+              </select>
+            <span class="red" *ngIf="studentForm.get('school_name').errors">School Name is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('admission_on').touched || studentForm.get('admission_on').dirty) && !studentForm.get('admission_on').valid}">
+          <label for="admission_on" class="col-sm-2 control-label">Admission On:</label>
+          <div class="col-sm-8">
+            <input type="date" formControlName="admission_on" placeholder="Enter Admission On" class="form-control" id="admission_on" required>
+            <span class="red" *ngIf="studentForm.get('admission_on').errors">Admission On is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('class_code').touched || studentForm.get('class_code').dirty) && !studentForm.get('class_code').valid}">
+          <label for="email" class="col-sm-2 control-label">Class Code:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="class_code" placeholder="Enter Class Code" class="form-control" id="class_code" required>
+            <span class="red" *ngIf="studentForm.get('class_code').errors">Class Code is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('other_student_details').touched || studentForm.get('other_student_details').dirty) && !studentForm.get('other_student_details').valid}">
+          <label for="email" class="col-sm-2 control-label">Other Student Details:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="other_student_details" placeholder="Enter Other Student Details" class="form-control" id="other_student_details" required>
+            <span class="red" *ngIf="studentForm.get('other_student_details').errors">Other Student Details is Required</span>
+          </div>
+        </div>
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentForm.get('IsActive').touched || studentForm.get('IsActive').dirty) && !studentForm.get('IsActive').valid}">
+          <label for="email" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="studentForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+        </div>
+    <div class="panel-footer">
+      <div class="btn-toolbar">
+      <button type="submit" (click)="postStudent()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+      <button type="button" (click)="update()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+      <button type="button" (click)="viewStudent()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View Student</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</section>

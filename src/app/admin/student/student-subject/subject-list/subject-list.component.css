@@ -1,0 +1,14 @@
+#book-detail{
+    min-height: 220px;
+    padding: 6rem 10px 20px;
+    border: 1px solid mediumseagreen;
+    background: #92152e;
+    color:#fff;
+    text-align: center;
+}
+#book-detail:hover{
+    -webkit-box-shadow: 0px 1px 14px #333;
+    -moz-box-shadow: 0px 1px 14px #333;
+    -o-box-shadow: 0px 1px 14px #333;
+    box-shadow: 0px 1px 14px #333;
+}

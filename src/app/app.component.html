@@ -1,0 +1,56 @@
+
+
+
+
+<div>
+<app-navbar></app-navbar>
+  <!--router outlet-->
+<div class="container">
+    <router-outlet></router-outlet>
+    </div>
+<!--end-->
+<footer>
+  <div class="container">
+    <div class="clearfix">
+    <ul class="list-unstyled col-sm-4">
+      <li routerLinkActive="active"><a routerLink="/home">{{'Home' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/about">{{'About' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/result">{{'Result' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/facility">{{'Facility' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/contact">{{'Contact' | translate}}</a></li>
+    </ul>
+    <ul class="list-unstyled col-sm-4" *ngIf="!isLoginActive">
+      <li routerLinkActive="active"><a [routerLink]="['/admin/list-student']">Add Student</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/school-address']">School Address</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/student-subject']">Subject</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/student-fee']">Fees</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/student-class']">Class</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/student-address']">Address</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/student-report']">Student Report</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/teacher']">Teacher</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/admin/school']">School</a></li>
+    </ul>
+    <ul class="list-unstyled col-sm-4">
+      <li routerLinkActive="active"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i> Facebook</a></li>
+      <li routerLinkActive="active"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i> Twitter</a></li>
+      <li routerLinkActive="active"><a target="_blank" href="http://www.gmail.com"><i class="fa fa-envelope-o"></i> Gmail</a></li>
+      <li routerLinkActive="active"><a target="_blank" href="http://www.instagram.com"><i class="fa fa-instagram"></i> Instagram</a></li>
+      <li routerLinkActive="active"><a target="_blank" href="http://www.pinterest.com"><i class="fa fa-pinterest"></i> Pinterest</a></li>
+    </ul>
+  </div>
+    <div class="row"><hr style="border: 1px solid;"/></div>
+  <div class="clearfix">
+    <ul class="list-unstyled col-sm-12 m-b-0 flex" id="languageChange">
+      <li>Language Change:</li>
+      <li class="pointer" *ngFor="let lang of supportedLangs" (click)="selectLang(lang.value)" [class.active-lang]="isCurrentLang(lang.value)">{{ lang.display }}</li>
+    </ul>
+  </div>
+  <div class="row"><hr/></div>
+  <div class="clearfix">
+    <ul class="list-unstyled col-sm-12 m-b-0">
+      <li class="text-center">&copy; Copyright by GIC Kotdwara. All right reserved.</li>
+    </ul>
+    </div>
+  </div>
+</footer>
+</div>

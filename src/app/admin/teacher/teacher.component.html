@@ -1,0 +1,93 @@
+
+
+
+<div class="form-group">
+  <form class="form-horizontal" [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Teacher Detail</h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('teacher_id').touched || teacherForm.get('teacher_id').dirty) && !teacherForm.get('teacher_id').valid}">
+          <label for="teacher_id" class="col-sm-2 control-label">Teacher Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="teacher_id" placeholder="Enter Teacher Id" class="form-control" id="student_id" required>
+            <span class="red" *ngIf="teacherForm.get('teacher_id').errors">Teacher Id is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('school_id').touched || teacherForm.get('school_id').dirty) && !teacherForm.get('school_id').valid}">
+          <label for="school_id" class="col-sm-2 control-label">School Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="school_id" placeholder="Enter School Id" class="form-control" id="school_id" required>
+            <span class="red" *ngIf="teacherForm.get('school_id').errors">School Id is Required</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Full Name:</label>
+            <div class="col-sm-3 form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('first_name').touched || teacherForm.get('first_name').dirty) && !teacherForm.get('first_name').valid}">
+                <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter First Name" formControlName="first_name" required>
+              <span class="red" *ngIf="teacherForm.get('first_name').errors">First Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-2 form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('middle_name').touched || teacherForm.get('middle_name').dirty) && !teacherForm.get('middle_name').valid}">
+                <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Middle Name" formControlName="middle_name" required>
+              <span class="red" *ngIf="teacherForm.get('middle_name').errors">Middle Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-3 clearfix" [ngClass]="{'has-error':(teacherForm.get('last_name').touched || teacherForm.get('last_name').dirty) && !teacherForm.get('last_name').valid}">
+              <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="last_name" required>
+              <span class="red" *ngIf="teacherForm.get('last_name').errors">Last Name is Required</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('gender').touched || teacherForm.get('gender').dirty) && !teacherForm.get('gender').valid}">
+            <label for="proficiency" class="control-label col-sm-2">Gender:</label>
+            <div class="col-sm-8">
+              <label class="radio-inline">
+                <input type="radio" value="Male" name="gender" formControlName="gender" required>Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="Female" name="gender" formControlName="gender" required>Female
+              </label>
+              <span class="clearfix"></span>
+              <span class="red" *ngIf="teacherForm.get('gender').errors">Gender is Required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('other_teacher_details').touched || teacherForm.get('other_teacher_details').dirty) && !teacherForm.get('other_teacher_details').valid}">
+          <label for="other_teacher_details" class="col-sm-2 control-label">Other Teacher Details:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="other_teacher_details" placeholder="Enter Other Student Details" class="form-control" id="other_teacher_details" required>
+            <span class="red" *ngIf="teacherForm.get('other_teacher_details').errors">Other Student Details is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(teacherForm.get('IsActive').touched || teacherForm.get('IsActive').dirty) && !teacherForm.get('IsActive').valid}">
+          <label for="IsActive" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="teacherForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+        <button (click)="postTeacher()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+        <!-- <button type="button" (click)="onLoadDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+        <button type="button" (click)="update()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+        <!-- <button type="button" (click)="saveTeacher()"  class="btn btn-md btn-info">Save Teacher</button> -->
+        <button type="button" (click)="viewTeacher()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View Teacher</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <br/><br/>

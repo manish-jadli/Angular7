@@ -1,0 +1,116 @@
+
+
+
+<div class="form-group">
+  <form class="form-horizontal" [formGroup]="studentReportForm" (ngSubmit)="onSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create Student Report</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('report_id').touched || studentReportForm.get('report_id').dirty) && !studentReportForm.get('report_id').valid}">
+          <label for="report_id" class="col-sm-2 control-label">Report Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="report_id" placeholder="Enter Report Id" class="form-control" id="report_id" required>
+            <span class="red" *ngIf="studentReportForm.get('report_id').errors">Report Id is Required</span>
+          </div>
+        </div>
+
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('student_id').touched || studentReportForm.get('student_id').dirty) && !studentReportForm.get('student_id').valid}">
+          <label for="student_id" class="col-sm-2 control-label">Student Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="student_id" placeholder="Enter Student Id" class="form-control" id="student_id" required>
+            <span class="red" *ngIf="studentReportForm.get('student_id').errors">Student Id is Required</span>
+          </div>
+        </div>
+        <div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Full Name:</label>
+            <div class="col-sm-3 form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('first_name').touched || studentReportForm.get('first_name').dirty) && !studentReportForm.get('first_name').valid}">
+              <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter First Name" formControlName="first_name" required>
+              <span class="red" *ngIf="studentReportForm.get('first_name').errors">First Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-2 form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('middle_name').touched || studentReportForm.get('middle_name').dirty) && !studentReportForm.get('middle_name').valid}">
+                <div class="col-sm-12">
+              <input type="text" class="form-control" placeholder="Enter Middle Name" formControlName="middle_name" required>
+              <span class="red" *ngIf="studentReportForm.get('middle_name').errors">Middle Name is Required</span>
+              </div>
+            </div>
+            <div class="col-sm-3 clearfix" [ngClass]="{'has-error':(studentReportForm.get('last_name').touched || studentReportForm.get('last_name').dirty) && !studentReportForm.get('last_name').valid}">
+              <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="last_name" required>
+              <span class="red" *ngIf="studentReportForm.get('last_name').errors">Last Name is Required</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('gender').touched || studentReportForm.get('gender').dirty) && !studentReportForm.get('gender').valid}">
+            <label for="proficiency" class="control-label col-sm-2">Gender:</label>
+            <div class="col-sm-8">
+              <label class="radio-inline">
+                <input type="radio" value="Male" name="gender" formControlName="gender" required>Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="Female" name="gender" formControlName="gender" required>Female
+              </label>
+              <span class="clearfix"></span>
+              <span class="red" *ngIf="studentReportForm.get('gender').errors">Gender is Required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('date_created').touched || studentReportForm.get('date_created').dirty) && !studentReportForm.get('date_created').valid}">
+          <label for="date_created" class="col-sm-2 control-label">Date Created:</label>
+          <div class="col-sm-8">
+            <input type="date" formControlName="date_created" placeholder="Enter Date Created" class="form-control" id="date_created" required>
+            <span class="red" *ngIf="studentReportForm.get('date_created').errors">Date Created is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('report_content').touched || studentReportForm.get('report_content').dirty) && !studentReportForm.get('report_content').valid}">
+          <label for="report_content" class="col-sm-2 control-label">Report Content:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="report_content" placeholder="Enter Report Content" class="form-control" id="report_content" required>
+            <span class="red" *ngIf="studentReportForm.get('report_content').errors">Report Content is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('teacher_comments').touched || studentReportForm.get('teacher_comments').dirty) && !studentReportForm.get('teacher_comments').valid}">
+          <label for="teacher_comments" class="col-sm-2 control-label">Teacher Comments:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="teacher_comments" placeholder="Enter Teacher Comments" class="form-control" id="teacher_comments" required>
+            <span class="red" *ngIf="studentReportForm.get('teacher_comments').errors">Teacher Comments is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('other_report_details').touched || studentReportForm.get('other_report_details').dirty) && !studentReportForm.get('other_report_details').valid}">
+          <label for="other_report_details" class="col-sm-2 control-label">Other Report Details:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="other_report_details" placeholder="Enter Other Report Details" class="form-control" id="other_report_details" required>
+            <span class="red" *ngIf="studentReportForm.get('other_report_details').errors">Other Report Details is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(studentReportForm.get('IsActive').touched || studentReportForm.get('IsActive').dirty) && !studentReportForm.get('IsActive').valid}">
+          <label for="email" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="studentReportForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+        <button type="submit" (click)="postStudentReport()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+        <!-- <button type="button" (click)="onLoadStudentReportDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+        <button type="button" (click)="updateStudentReport()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+        <!-- <button type="button" (click)="saveStudent()"  class="btn btn-md btn-info">Save Student</button> -->
+        <button type="button" (click)="viewStudentReport()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View Student Report</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <br/><br/>

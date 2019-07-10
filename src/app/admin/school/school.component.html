@@ -1,0 +1,74 @@
+
+
+
+
+<div class="form-group">
+  <form class="form-horizontal" [formGroup]="schoolForm" (ngSubmit)="onSubmit()">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">School Detail</h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('school_id').touched || schoolForm.get('school_id').dirty) && !schoolForm.get('school_id').valid}">
+          <label for="school_id" class="col-sm-2 control-label">School Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="school_id" placeholder="Enter School Id" class="form-control" id="school_id" required>
+            <span class="red" *ngIf="schoolForm.get('school_id').errors">School Id is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('address_id').touched || schoolForm.get('address_id').dirty) && !schoolForm.get('address_id').valid}">
+          <label for="address_id" class="col-sm-2 control-label">Address Id:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="address_id" placeholder="Enter Address Id" class="form-control" id="address_id" required>
+            <span class="red" *ngIf="schoolForm.get('address_id').errors">Address Id is Required</span>
+          </div>
+        </div>
+
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('school_name').touched || schoolForm.get('school_name').dirty) && !schoolForm.get('school_name').valid}">
+          <label for="school_name" class="col-sm-2 control-label">School Name:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="school_name" placeholder="Enter School Name" class="form-control" id="school_name" required>
+            <span class="red" *ngIf="schoolForm.get('school_name').errors">School Name is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('school_principal').touched || schoolForm.get('school_principal').dirty) && !schoolForm.get('school_principal').valid}">
+          <label for="school_principal" class="col-sm-2 control-label">School Principal:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="school_principal" placeholder="Enter School Principal" class="form-control" id="school_principal" required>
+            <span class="red" *ngIf="schoolForm.get('school_principal').errors">School Principal is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('other_school_details').touched || schoolForm.get('other_school_details').dirty) && !schoolForm.get('other_school_details').valid}">
+          <label for="other_school_details" class="col-sm-2 control-label">Other School Details:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="other_school_details" placeholder="Enter Other School Details" class="form-control" id="other_school_details" required>
+            <span class="red" *ngIf="schoolForm.get('other_school_details').errors">Other School Details is Required</span>
+          </div>
+        </div>
+
+        <div class="form-group clearfix" [ngClass]="{'has-error':(schoolForm.get('IsActive').touched || schoolForm.get('IsActive').dirty) && !schoolForm.get('IsActive').valid}">
+          <label for="IsActive" class="col-sm-2 control-label">Active:</label>
+          <div class="col-sm-8">
+            <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+            <span class="red" *ngIf="schoolForm.get('IsActive').errors">Active is Required</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="panel-footer">
+        <div class="btn-toolbar">
+        <button (click)="postSchool()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+        <!-- <button type="button" (click)="onLoadDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+        <button type="button" (click)="update()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+        <button type="button" (click)="viewSchool()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View School</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <br/><br/>  

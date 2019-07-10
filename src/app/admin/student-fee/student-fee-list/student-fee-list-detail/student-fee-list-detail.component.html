@@ -1,0 +1,75 @@
+
+
+<div class="form-group col-sm-8 col-sm-offset-2 clearfix">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+              <div class="col-sm-4">
+                  <div>
+                      <span>
+                      <img [src]="user" [alt]="user" [title]="user" class="img-responsive">
+                     </span>
+                     <span  *ngIf="studentListDetail?.gender==='Female'">
+                         <img [src]="girl" [alt]="girl" [title]="girl" class="img-responsive">
+                        </span>
+                    </div>
+          </div>
+        <div class="col-sm-8">
+          <div class="panel panel-primary m-b-0">
+            <div class="panel-heading">{{studentListDetail?.student_id}}</div>
+            <div class="panel-body">
+                  <div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Full Name:</b></div>
+                        <div class="col-sm-7">{{studentListDetail?.first_name}}  {{studentListDetail?.last_name}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Gender:</b></div>
+                        <div class="col-sm-7">{{studentListDetail?.gender}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Class:</b></div>
+                          <div class="col-sm-7">{{studentListDetail?.class}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Subject:</b></div>
+                        <div class="col-sm-7">{{studentListDetail?.subject}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Payment Mode:</b></div>
+                          <div class="col-sm-7">{{studentListDetail?.payment_mode}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Fees:</b></div>
+                          <div class="col-sm-7">{{studentListDetail?.fees | currency:'USD':true}}</div>
+                      </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Tution Fee:</b></div>
+                        <div class="col-sm-7">{{studentListDetail?.tution_fee | currency:'USD':true}}</div>
+                      </div>
+                    <div class="row">
+                      <div class="col-sm-5"><b>Library Fee:</b></div>
+                       <div class="col-sm-7">{{studentListDetail?.library_fee | currency:'USD':true}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Game Fee:</b></div>
+                        <div class="col-sm-7">{{studentListDetail?.game_fee | currency:'USD':true}}</div>
+                    </div>
+                    <div class="row">
+                            <div class="col-sm-5"><b>Paneltie Fee:</b></div>
+                            <div class="col-sm-7">{{studentListDetail?.paneltie_fees | currency:'USD':true}}</div>
+                        </div>
+                        <div class="row">
+                                <div class="col-sm-5"><b>Other Fee:</b></div>
+                                <div class="col-sm-7">{{studentListDetail?.other_fee | currency:'USD':true}}</div>
+                            </div>
+                    <div class="row">
+                        <div class="col-sm-5"><b>Is Active:</b></div>
+                          <div class="col-sm-7">{{studentListDetail?.IsActive}}</div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+          </div>

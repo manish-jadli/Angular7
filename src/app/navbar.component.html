@@ -1,0 +1,73 @@
+
+<!--top navigation code-->
+<div class="container-fluid">
+  <div class="pull-left">
+    <ul class="list-unstyled" id="social-icon">
+      <li><b>Email: </b>manish120mani@gmail.com</li>
+      <li><b>Mob No. </b>(+91) 9045 571 092</li>
+    </ul>
+  </div>
+  <div class="pull-right">
+    <ul class="list-unstyled" id="social-icon">
+      <li><i class="fa fa-whatsapp"></i></li>
+      <li><i class="fa fa-twitter"></i></li>
+      <li><i class="fa fa-envelope-o"></i></li>
+      <li><i class="fa fa-facebook"></i></li>
+      <li><i class="fa fa-instagram"></i></li>
+    </ul>
+  </div>
+</div>
+<!--end-->
+
+  <!--navigation code-->
+  <div>
+  <nav class="navbar navbar-inverse d-yellow">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" routerLink="/home">School</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active"><a routerLink="/home">{{'Home' | translate}}</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              {{'Service' | translate}}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li routerLinkOptions="{exact: true}"><a routerLink="/admin">Add Student</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/school-address">School Address</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/student-subject">Subject</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/student-fee">Fee's</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/student-class">Class</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/student-address">Address</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/student-report">Student Report</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/teacher">Teacher</a></li>
+              <li routerLinkActive="active"><a routerLink="/admin/school">School</a></li>
+            </ul>
+          </li>
+          <li routerLinkActive="active"><a routerLink="/facility">Facility {{'Portfolio' | translate}}</a></li>
+          <li routerLinkActive="active"><a routerLink="/result">{{'Result' | translate}}</a></li>
+          <li routerLinkActive="active"><a routerLink="/about">{{'About' | translate}}</a></li>
+          <li routerLinkActive="active"><a routerLink="/contact">{{'Contact' | translate}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li routerLinkActive="active" class="dropdown">
+            <a routerLink="login" *ngIf="isLoginActive" (click)="loginActive()"><i class="fa fa-sign-in" aria-hidden="true"></i> {{'Login' | translate}}</a>
+            <a *ngIf="!isLoginActive" class="dropdown-toggle" data-toggle="dropdown"><span routerLink="/login/profile"><i class="fa fa-user"></i> Manish Jadli <span class="caret"></span></span></a>
+            <ul class="dropdown-menu" *ngIf="!isLoginActive">
+              <li routerLinkActive="active"><a routerLink="/login/profile"><i class="fa fa-user"></i> {{'Profile' | translate}}</a></li>
+              <li routerLinkActive="active"><a (click)="logout()"><i class="fa fa-sign-out"></i> {{'LogOut' | translate}}</a></li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+<!--end-->

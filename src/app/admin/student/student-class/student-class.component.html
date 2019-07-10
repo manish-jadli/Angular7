@@ -1,0 +1,67 @@
+
+
+<div class="form-group">
+    <form class="form-horizontal" [formGroup]="studentClassForm" (ngSubmit)="onSubmitClass()">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Create Student Class</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentClassForm.get('student_id').touched || studentClassForm.get('student_id').dirty) && !studentClassForm.get('student_id').valid}">
+            <label for="fullName" class="col-sm-2 control-label">Student Id:</label>
+            <div class="col-sm-8">
+              <input type="text" formControlName="student_id" placeholder="Enter Student Id" class="form-control" id="student_id" required>
+              <span class="red" *ngIf="studentClassForm.get('student_id').errors">Student Id is Required</span>
+            </div>
+          </div>
+
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentClassForm.get('class_id').touched || studentClassForm.get('class_id').dirty) && !studentClassForm.get('class_id').valid}">
+            <label for="email" class="col-sm-2 control-label">Class Id</label>
+            <div class="col-sm-8">
+              <input type="text" formControlName="class_id" placeholder="Enter Class Id" class="form-control" id="class_id" required>
+              <span class="red" *ngIf="studentClassForm.get('class_id').errors">Class Id is Required</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Date From/To:</label>
+              <div class="col-sm-4 form-group clearfix" [ngClass]="{'has-error':(studentClassForm.get('date_from').touched || studentClassForm.get('date_from').dirty) && !studentClassForm.get('date_from').valid}">
+                <div class="col-sm-12">
+                <input type="date" class="form-control" formControlName="date_from" required>
+                <span class="red" *ngIf="studentClassForm.get('date_from').errors">Date From is Required</span>
+                </div>
+              </div>
+              <div class="col-sm-4 form-group clearfix" [ngClass]="{'has-error':(studentClassForm.get('date_to').touched || studentClassForm.get('date_to').dirty) && !studentClassForm.get('date_to').valid}">
+                <div class="col-sm-12">
+                <input type="date" class="form-control" formControlName="date_to" required>
+                <span class="red" *ngIf="studentClassForm.get('date_to').errors">Date To is Required</span>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="form-group clearfix" [ngClass]="{'has-error':(studentClassForm.get('IsActive').touched || studentClassForm.get('IsActive').dirty) && !studentClassForm.get('IsActive').valid}">
+            <label for="email" class="col-sm-2 control-label">Active:</label>
+            <div class="col-sm-8">
+              <input type="text" formControlName="IsActive" placeholder="Enter IsActive" class="form-control" id="IsActive" required>
+              <span class="red" *ngIf="studentClassForm.get('IsActive').errors">Active is Required</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="panel-footer">
+          <div class="btn-toolbar">
+          <button type="submit" (click)="postStudentClass()" class="btn btn-md btn-success"><i class="fa fa-check"></i> Submit</button>
+          <!-- <button type="button" (click)="onLoadDataClick()" class="btn btn-md btn-success">Load Data</button> -->
+          <button type="button" (click)="update()"  class="btn btn-md btn-warning"><i class="fa fa-pencil-square-o"></i> Update</button>
+          <!-- <button type="button" (click)="saveStudent()"  class="btn btn-md btn-info">Save Student</button> -->
+          <button type="button" (click)="viewStudentClass()"  class="btn btn-md btn-info"><i class="fa fa-eye"></i> View Student</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+    <br/><br/>
+ 

@@ -1,0 +1,93 @@
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Profile</div>
+  <div class="panel-body">
+<div class="row">
+  <div class="col-sm-4">
+    <!--profile image code-->
+    <div class="form-group b-a-1">
+      <img [src]="profileImg" class="img-responsive img-circle bor-15" />
+    </div>
+  <!--end-->
+  <!--forget password button code-->
+    <div class="form-group text-center">
+      <button type="button" class="btn btn-warning col-sm-12"><i class="fa fa-refresh"></i> Forget Password</button>
+    </div>
+    <!--end-->
+  </div>
+  <div class="col-sm-8">
+    <!--profile detail code-->
+    <div class="form-group">
+      <h2>Manish Jadli</h2>
+      <div class="form-group">
+        <strong>Email: </strong>manish120mani@gmail.com
+      </div>
+      <div class="form-group">
+          <strong>Address 1: </strong>Vill-Sattichaur
+        </div>
+        <div class="form-group">
+            <strong>Address 2: </strong>P.O-Nimbuchaur
+          </div>
+          <div class="form-group">
+              <strong>City: </strong>Kotdwara
+            </div>
+          <div class="form-group">
+              <strong>Country: </strong>India
+            </div>
+            <div class="form-group">
+                <strong>State: </strong>Uttrakhand
+              </div>
+              <div class="form-group">
+                  <strong>Pincode: </strong>246149
+                </div>
+    </div>
+    <!--end-->
+
+    <hr>
+
+    <!--forget password code-->
+    <div class="form-group">
+      <h2>Forget Password</h2>
+      <form name="forgetPassForm" novalidate>
+      <div class="form-group">
+        <label for="old_password" class="col-sm-5">Old Password:</label>
+        <div class="col-sm-7 form-group">
+          <input type="text" id="old_password" name="old_password" class="form-control" placeholder="Enter Old Password" autofocus required />
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <label class="col-sm-offset-5 col-sm-7">OR</label>
+      </div>
+      <div class="form-group">
+          <label for="old_password" class="col-sm-5">Email Id:</label>
+          <div class="col-sm-7 form-group">
+            <input type="email" id="old_password" name="old_password" class="form-control" placeholder="Enter Old Password" autofocus required />
+          </div>
+        </div>
+      <div class="form-group">
+          <label for="new_password" class="col-sm-5">New Password:</label>
+          <div class="col-sm-7 form-group">
+            <input type="text" id="new_password" name="new_password" class="form-control" placeholder="Enter New Password" autofocus required />
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password" class="col-sm-5">Confirm Password:</label>
+            <div class="col-sm-7 form-group">
+              <input type="text" id="confirm_password" name="confirm_password" class="form-control" placeholder="Enter Confirm Password" autofocus required />
+            </div>
+          </div>
+          <div class="form-group col-sm-12">
+            <div class="pull-right">
+              <div class="btn-toolbar">
+                <button type="button" class="btn btn-md btn-success" (click)="onSubmit()"><i class="fa fa-check"></i> Submit</button>
+                <button type="reset" class="btn btn-md btn-danger"><i class="fa fa-refresh"></i> Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+    </div>
+    <!--end-->
+  </div>
+</div>
+  </div>
+</div>

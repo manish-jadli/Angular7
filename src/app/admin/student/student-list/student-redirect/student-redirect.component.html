@@ -1,0 +1,70 @@
+
+<div class="form-group col-sm-8 col-sm-offset-2 clearfix">
+<div class="panel panel-primary">
+  <div class="panel-body">
+      <div class="col-sm-4">
+          <div>
+              <span *ngIf="students?.gender==='Male'">
+              <img [src]="user" [alt]="user" [title]="user" class="img-responsive">
+             </span>
+             <span  *ngIf="students?.gender==='Female'">
+                 <img [src]="girl" [alt]="girl" [title]="girl" class="img-responsive">
+                </span>
+            </div>
+  </div>
+<div class="col-sm-8">
+  <div class="panel panel-primary m-b-0">
+    <div class="panel-heading">{{students?.student_id}}</div>
+    <div class="panel-body">
+          <div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Full Name:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.first_name}} {{students?.last_name}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Date of Birth:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.date_of_birth | date}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Gender:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.gender}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Father Name:</b></div>
+                  <div class="col-sm-7 col-xs-6">{{students?.father_name}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Mother Name:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.mother_name}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Mobile No:</b></div>
+                  <div class="col-sm-7 col-xs-6">{{students?.mobile_no}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Admission On:</b></div>
+                  <div class="col-sm-7 col-xs-6">{{students?.admission_on | date}}</div>
+              </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>School Name:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.school_name}}</div>
+              </div>
+            <div class="row">
+              <div class="col-sm-5 col-xs-6"><b>Other Student Detail</b></div>
+               <div class="col-sm-7 col-xs-6">{{students?.other_student_details}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Class Code:</b></div>
+                <div class="col-sm-7 col-xs-6">{{students?.class_code}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 col-xs-6"><b>Is Active:</b></div>
+                  <div class="col-sm-7 col-xs-6">{{students?.IsActive}}</div>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+  </div>
